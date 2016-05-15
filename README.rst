@@ -16,6 +16,6 @@ You can read the tests (in tests directory) or copy the following code.
     def multiply_by_2():
         return lambda x: 2*x"""
 
-    loader, mymodule = stringimporter.import_str(module_from_thin_air, 'yihaaa')
+    loader, mymodule = stringimporter.import_str('yihaaa', module_from_thin_air)
 
-    hello_2 = mymodule.multiply_by_2("hello ")
+    hello_2 = mymodule.multiply_by_2()("hello ")
