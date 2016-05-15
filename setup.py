@@ -9,7 +9,7 @@ config = {
     'url': 'https://github.com/majerteam/stringimporter',
     'download_url': 'https://github.com/majerteam/stringimporter',
     'author_email': 'tech@majerti.fr',
-    'version': '0.1.2',
+    'version': '0.1.3',
     'packages': ['stringimporter'],
     'setup_requires': ['pytest-runner'],
     'tests_require': ['pytest'],

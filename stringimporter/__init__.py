@@ -11,12 +11,10 @@ import types
 
 
 class DummyModuleLoader(importlib.abc.SourceLoader):
-    def __init__(self, name, src_code, *args, **kwargs):
+    def __init__(self, name, src_code, filename=None):
         self._dummy_name = name
         self._src_code = src_code
-        if "filename" in kwargs:
-            filename = kwargs.get("filename")
-        else:
+        if not filename:
             filename = '{}.py'.format(self._dummy_name.replace('.', '/'))
         self._filename = filename
 
