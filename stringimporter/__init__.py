@@ -39,5 +39,6 @@ def import_str(module_name, python_code, filename=None, exec_module=True):
     """
     loader = DummyModuleLoader(module_name, python_code, filename=filename)
     module = loader.create_module(None)
-    loader.exec_module(module)
+    if exec_module:
+        loader.exec_module(module)
     return loader, module
