@@ -1,7 +1,7 @@
 stringimporter
 ==================
 
-let's you import raw string as real Python modules
+``stringimporter`` lets you import raw string as real Python modules
 
 How to use
 ==========
