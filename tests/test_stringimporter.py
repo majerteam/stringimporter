@@ -1,6 +1,5 @@
-import pytest
-
 import stringimporter
+from .fixtures import cls_name, obj_name, mod_name
 
 
 _MODULE_TEMPLATE = """
@@ -12,38 +11,6 @@ class {0}:
 def some_function():
     return {0}('{1}')
 """
-
-
-_CLS_NAMES = (
-    'FooBar',
-    'NimporteQuoi',
-    'IrgendWas',
-)
-_OBJ_NAMES = (
-    'antigone',
-    'barnabe',
-    'cassandra',
-    'demosthene',
-)
-_MOD_NAMES = (
-    'charybde',
-    'scylla',
-)
-
-
-@pytest.fixture(scope="session", params=_CLS_NAMES)
-def cls_name(request):
-    return request.param
-
-
-@pytest.fixture(scope="session", params=_OBJ_NAMES)
-def obj_name(request):
-    return request.param
-
-
-@pytest.fixture(scope="session", params=_MOD_NAMES)
-def mod_name(request):
-    return request.param
 
 
 def test_importer(cls_name, obj_name, mod_name):
