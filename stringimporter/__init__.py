@@ -33,6 +33,14 @@ class DummyModuleLoader(importlib.abc.SourceLoader):
 
 def import_str(module_name, python_code, filename=None, exec_module=True):
     """
+    Creates a Python module from a string containing code
+
+    :param str module_name: apparent name of the created module
+    :param str python_code: the Python code
+    :param bool exec_module: if True (default), imported code will be executed.
+        else, you'll have to run loader.exec_module(module)
+    :param str filename: we emulate loading from a file,
+        you can specify the name here.
     :return: tuple of module loader and module
     """
     loader = DummyModuleLoader(module_name, python_code, filename=filename)
